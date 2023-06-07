@@ -23,16 +23,16 @@ export const useChatStore = defineStore(
     const isShowChatServiceSelectModal = ref(false);
     const selectedSydneyBaseUrl = ref('');
     const sydneyConfigs = ref<SydneyConfig[]>([
-      {
+      /*{
         baseUrl: 'https://sydney.bing.com',
         label: 'Bing 官方',
-      },
+      }, */
       {
         baseUrl: 'https://sydney.vcanbb.chat',
         label: 'Cloudflare',
       },
       {
-        baseUrl: location.origin,
+        baseUrl: 'https://chat.chat2ai.live/'',
         label: '本站',
       },
       {
@@ -41,7 +41,7 @@ export const useChatStore = defineStore(
         isCus: true,
       },
     ]);
-    const sydneyCheckTimeoutMS = 3000;
+    const sydneyCheckTimeoutMS =1200;
 
     const checkSydneyConfig = async (config: SydneyConfig): Promise<CheckSydneyConfigResult> => {
       if (!config.baseUrl) {
